@@ -1,0 +1,31 @@
+
+<div class="text-center m-5 p-5">
+    <form [formGroup]="movieform">
+        <div class="container mb-3 mt-1">
+            <label for="" class="form-label fa-2x">Enter the movie title</label><br><br>
+            <input formControlName="title" type="text" class="form-control" name="sa" id="s1">
+        </div>
+            <button type="submit" class="btn btn-dark" (click)="searchMovie()">Search</button>
+    </form>
+</div>
+
+<!-- Build a movie search application that fetches movie data from the API
+(https://www.omdbapi.com/?apikey=${apiKey}&t=${moviename}) based on user input (moviename) and
+displays details such as title, Released date, actors, plot, poster and ratings.
+apikey: fa1c9c03
+
+(submit the git hub link below) -->
+
+<div *ngIf="result" class="container text-center w-75" style="background-color: rgba(0, 0, 0, 0.582); border-radius: 30px;">
+    <h1>Result</h1>
+    <div>
+        <img src="{{Poster}}" alt="">
+    </div>
+    <div class="p-5">
+       <h1 style="color: aliceblue;">Title:{{Title}}</h1>
+       <h1 style="color: aliceblue;">Released date:{{Released}}</h1>
+       <h1 style="color: aliceblue;">Cast:{{Actors}}</h1>
+       <h1 style="color: aliceblue;">Plot:{{Plot}}</h1>
+       <h1 style="color: aliceblue;">Ratings:{{Ratings[0].Value}}</h1>
+    </div>
+</div>
